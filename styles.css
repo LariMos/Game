@@ -1,0 +1,148 @@
+* {
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lottie-animation{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%vh;
+    height: 100%vh;
+    z-index: -1;
+}
+
+#title {
+    font-family: 'Sigmar', cursive;
+    font-size: 15vh;
+    line-height: 1em;
+    color: rgb(255, 130, 13);
+}
+
+
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: rgb(39, 41, 40);
+    text-align: center;
+    line-height: 2em;
+}    
+
+#intro-page {
+    display: block;
+    /* Initial value to display is block */
+}
+
+h1 {
+    font-size: 5vh;
+}
+
+h2 {
+    font-size: 3vh;
+}
+
+#click-to-play {
+    font-size: 20px;
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    border-color: white;
+}
+
+#youtube-video {
+    margin: 50px 0px 20px 0px; 
+}
+
+#game-page{
+    display: none;
+}
+
+.hide {
+    display: none;
+    /* Secondary value when button pressed is none to hide intro */
+}
+
+#return-to-intro{
+    position: absolute;
+    left: 0;
+    height: 20px;
+    width: 100px;
+    background-color: aqua;
+    color: white;
+    border: 0px;
+}
+
+.speech-bubble {
+    display: inline-block;      
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f00606;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .speech-bubble-text {
+    max-width: 200px;
+  }
+  
+#start-button{
+    background-color: #f00606;
+}
+
+.color-button-container{
+    display: grid;
+    justify-content: left;
+}
+
+#top{
+    background-color: #f00606;
+    font-size: medium;
+    width: 50px;
+    height: 50px;
+    margin: 0px 10px;
+    border:none;
+    border-radius: 50%;
+}
+
+#right{
+    background-color: #297215;
+    width: 50px;
+    height: 50px;
+    margin: 0px 10px;
+    border:none;
+    border-radius: 50%;
+}
+
+#bottom{
+        background-color: #2106f0;
+        width: 50px;
+        height: 50px;
+        margin: 0px 10px;
+        border:none;
+        border-radius: 50%;
+}
+
+#left{
+    background-color: #f0ec06;
+    width: 50px;
+    height: 50px;
+    margin: 0px 10px;
+    border:none;
+    border-radius: 50%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+

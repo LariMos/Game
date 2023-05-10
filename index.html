@@ -1,14 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheets" type=text/css href="/styles.css">
-    <script defer src="/script.js"></script>
-    <title>Document</title>
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+   
+
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <title>Weasel War Dance</title>
+</head>
+
+<body>     
+    <div class="container" id="intro-page">
+        <div class="lottie-animation">
+            <lottie-player id="lottie" src="https://assets4.lottiefiles.com/packages/lf20_oa2c7brx.json"  background="transparent"  speed="1"  style: cover loop  autoplay position="relative" margin=auto></lottie-player>
+        </div>
+
+        <div class="intro">
+            <header id="title">Weasel War Dance</header>
+
+            <div id="intro-text">
+                <h1>DID YOU KNOW...</h1>
+                <h2>that a weasel can catch prey 10X bigger than itself? <span>How does it do it?</span>Let's find out!</h2>
+            </div>
+            
+            <button id="click-to-play">Click To Play!</button>
+        
+            <div id="youtube-video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/uZOjwzInj2g?controls=0&amp;start=56" title="Weasel War Dance" frameborder="0px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            </div>
+
+        </div>
+        
+    </div>  
+    
+    <div class="container" id="game-page">
+        <div>           
+            <button id="return-to-intro">Back</button>
+            <div class="speech-bubble">
+                <div class="speech-bubble-text">Hi, I'm Mos the Weasel, and I've got my eyes on a huuuge, furry rabbit</div>
+                <!-- <div class="speech-bubble-text">Can you help me catch it?!</div>
+                <div class="speech-bubble-text">Can you? Can you?</div>
+                <div class="speech-bubble-text">Then let's dance!</div> -->
+              </div> 
+
+            <button id="start-button">Start</button>               
+        </div>
+        <div class="color-button-container">
+            <div id="top">1</div>
+            <div id="side-buttons">
+                <div id="right">2</div>
+                <div id="bottom">3</div>
+            </div>
+            <div id="left">4</div>
+        </div>
+        <div></div>
+        
+    </div>
+
+
+
 </body>
+<footer>Weasel War Dance || Copyright <strong>mOs</strong></footer>
 </html>
