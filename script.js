@@ -49,10 +49,10 @@ class SpeechBubble {
     disappear(time) {
         this.bubbleId.style.display = "block";
         setTimeout(() => {
-            if (instructionsPage.style.display === "block"){
-            this.bubbleId.style.display = "none";
-            }            
-            speechAnimationBubble.style.display = "none";            
+            if (instructionsPage.style.display === "block") {
+                this.bubbleId.style.display = "none";
+            }
+            speechAnimationBubble.style.display = "none";
             if (gamePage.style.display === "none") {
                 gamePage.style.display = "block";
             }
@@ -67,15 +67,10 @@ class SpeechBubble {
     }
 }
 
-let helloWeasel = new SpeechBubble("hello", "Hi, I'm mOs the weasel and I've got my eye on an extra furry rabbit! Can you help me catch it? Click on the colors and let's bring it closer!");
+let helloWeasel = new SpeechBubble("hello", "Hi, I'm mOs the weasel! Help me catch the fluffy tailed bunny! Just wack the colors when they pop up!");
 helloWeasel.addMessage();
-helloWeasel.disappear(5000);
+helloWeasel.disappear(8000);
 // console.log(helloWeasel);
-
-
-
-
-
 
 const colorButtons = document.getElementsByClassName("color-buttons");
 const weaselImages = document.getElementsByClassName("weasel-images");
@@ -89,24 +84,24 @@ const readySetGoText = document.getElementById("ready-set-go");
 
 function countdown() {
     if (gamePage.style.display === "block") {
-        setTimeout(function() {
+        setTimeout(function () {
             readySetGoText.textContent = "Ready?!";
-            
-            setTimeout(function() {
-              readySetGoText.textContent = "Set";
-              
-              setTimeout(function() {
-                readySetGoText.textContent = "Go!";
 
-                setTimeout(function() {
-                    readySetGoText.textContent = "";
-                },1000);        
+            setTimeout(function () {
+                readySetGoText.textContent = "Set";
 
-              }, 1000);
+                setTimeout(function () {
+                    readySetGoText.textContent = "Go!";
+
+                    setTimeout(function () {
+                        readySetGoText.textContent = "";
+                    }, 1000);
+
+                }, 1000);
             }, 1000);
-          }, 1000);
+        }, 1000);
     }
-  }
+}
 
 function flashButton(colorButton) {
     colorButton.classList.add("flashing");
@@ -141,9 +136,11 @@ function flashButtons() {
             clearInterval(interval);
             let percentage = (correctClicks / (totalFlashes * colorButtons.length)) * 100;
             if (percentage >= 50) {
-                alert("Yes!!! I'm close enough to catch it!");
-            } else {
+                alert("Yes!!! I'm close enough to catch the rabbit!");
+                // triggerWinCelebration();
+            } else if (percentage <= 50 && totalFlashes === 14){
                 alert("Darn it's too far! I won't catch it...Better luck next time!");
+                // triggerLoseCelebration();
             }
         }
     }, colorButtons.length * delayBetweenEachButtonFlash);
@@ -153,14 +150,15 @@ function handleClick(e) {
     const target = e.target;
     if (target.classList.contains("color-buttons") && target.classList.contains("flashing")) {
         correctClicks++;
+        rabbitPop();
         playerScore.innerText = correctClicks;
     }
 }
 
-const rabbitPop1=document.getElementById("rabbit-pop-1");
-function rabbitPop(){
-    if (correctClicks >=3 && rabbitPop1.style.display === "none"){
-        rabbitPop1.style.display = "block"; 
+const rabbitPop1 = document.getElementById("rabbit-pop-1");
+function rabbitPop() {
+    if (correctClicks >= 3) {
+        rabbitPop1.style.display = "block";
     }
 }
 
@@ -177,6 +175,21 @@ for (let i = 0; i < colorButtons.length; i++) {
     colorButtons[i].addEventListener("click", handleClick);
 }
 
+function triggerWinCelebration() {
+    const winCelebration = document.getElementById("win-celebration");
+    winCelebration.style.display = "block";
+    setTimeout(() => {
+      winCelebration.style.display = "none";
+    }, 500);
+  }
+
+  function triggerLoseCelebration() {
+    const loseCelebration = document.getElementById("lose-celebration");
+    loseCelebration.style.display = "block";
+    setTimeout(() => {
+      loseCelebration.style.display = "none";
+    }, 500);
+  }
 
 
 
