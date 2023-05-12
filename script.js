@@ -28,17 +28,13 @@ clickToPlay.addEventListener("click", function () {
     }
 });
 
-// backButton.addEventListener("click", function () {
-//     if (introPage.style.display === "none") {
-//         introPage.style.display = "block";
-//         instructionsPage.style.display = "none";
-//         gamePage.style.display = "none";
-//     } else {
-//         introPage.style.display = "none";
-//         instructionsPage.style.display = "block";
-//         gamePage.style.display = "none";
-//     }
-// });
+backButton.addEventListener("click", function () {
+    if (gamePage.style.display === "block") {
+        gamePage.style.display = "none";
+        introPage.style.display = "block";
+        instructionsPage.style.display = "none";
+    }
+});
 
 
 class SpeechBubble {
@@ -70,7 +66,6 @@ class SpeechBubble {
 let helloWeasel = new SpeechBubble("hello", "Hi, I'm mOs the weasel! Help me catch the fluffy tailed bunny! Just wack the colors when they pop up!");
 helloWeasel.addMessage();
 helloWeasel.disappear(8000);
-// console.log(helloWeasel);
 
 const colorButtons = document.getElementsByClassName("color-buttons");
 const weaselImages = document.getElementsByClassName("weasel-images");

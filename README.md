@@ -10,12 +10,18 @@ The app is split into 3 parts:
 
 
 ## Background
-It is based on my nickname in highschool "Weasel Mos", that represented both my energetic nature, as well as my undying proposterous ambition to go after goals that seem impossible to achieve. 
+It is based on the nickname I received in highschool - "Weasel Mos", that represented both my effervecent nature, as well as my undying, proposterous ambition to go after seemingly unattainable goals. Just as the weasel can catch prey 10 times bigger than itself through unconventional methods (in this case, its frantic dance), I also find ways to thrive in situations that I'm completely unequipped for. 
 
 
 ## Screenshots
 Screenshots of the game:
-[Imgur](https://i.imgur.com/Ga98OyB.jpg)
+[Imgur](https://i.imgur.com/rn0PE1n.png)
+[Imgur](https://i.imgur.com/kzEwIOx.png)
+[Imgur](https://i.imgur.com/LW87x2q.png)
+[Imgur](https://i.imgur.com/sdRDZ1D.png)
+[Imgur](https://i.imgur.com/7wiUcP9.png)
+[Imgur](https://i.imgur.com/93zkhDt.png)
+
 
 ## Technologies Used
 - HTML5
@@ -23,16 +29,29 @@ Screenshots of the game:
 - JavaScript
 - Lottiefiles
 ## Getting Started
-Give it a go!
-You can start cure your trivia cravings by clicking on the link below:
-https://movie-night-trivia.netlify.app/
-- Simply click on ‘GODSPEED’ to send you on your way and this is also the ‘Play’ button.
-- Next, simply select the category of movies you would like to be quizzed on.
-- Once you select an answer in the multiple choice options simply click ‘Ok’ to continue your game.
-- When you have selected your final answer you will be met with a completion modal letting you know how you did!
+
+Start the game by clicking on the link below:
+https://weasel-war-dance-mos.netlify.app
+
+- If you're curious to learn more about the weasel's war dance, please enjoy the fun and educational You Tube Video found at the bottom of the page
+- If you already know about the weasel's amazingness, then let's go ahead and "click to play"
+- You are now on an introduction page where you get to meet Weasel Mos, that tells you what the goal is and how to reach it
+- Wait for the speech bubble to vanish, so that you can move onto the game page
+- Now that you are on the game page, you can get started by clicking the "start" button, which will launch the flashing buttons
+- Try to catch as many buttons as you can!
+- If you get enough buttons, you catch the rabbit 
+- If you didn't get enough buttons, the rabbit runs away and you can start again
+
+
 ## MVP Goals/Stretch Goals/What’s Next
-- I reached my MVP Goals but do not have the questions inside of the other 3 categories; however, the functionality is there.
-- I would like to continue to flesh out the questions/answers of the other categories and by possibly adding images from the films and sound effects from the films.
-- I would also like to provide another animation at the end to celebrate the winner or coax the loser to play again.
+- I reached my MVP Goals 
+- I want to integrate a win celebration through an illustration of the weasel catching the rabbit
+- I also want to have a lose celebration through an illustration/ animation of the rabbit running away
+- Currently I have alerts set up for win/ lose but I will replace those
+- I want to add more speech bubbles at the instruction page that will break down the text content
+- I also want to have more interaction between the rabbit and the weasel 
+- I would like to improve the graphics overall
+- Regarding the code, I want to rewrite it all using mainly classes (which is what I started to do and I commented it out at the end)
+
 ## References
-Aside from using the above, I also found some great fonts that capture the films.
+The Google fonts I used were meant to give the impression of cartoon comics and the lotti animations have been a helpful addition. 
