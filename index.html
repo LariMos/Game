@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,19 +10,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
     
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
    
 
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
-    <title>Weasel War Dance</title>
+    <title>Document</title>
+
 </head>
 
 <body>     
     <div class="container" id="intro-page">
         <div class="lottie-animation">
-            <lottie-player id="lottie" src="https://assets4.lottiefiles.com/packages/lf20_oa2c7brx.json"  background="transparent"  speed="1"  style: cover loop  autoplay position="relative" margin=auto></lottie-player>
+            <lottie-player id="lottie" src="https://assets4.lottiefiles.com/packages/lf20_oa2c7brx.json" speed="1" loop autoplay preserveAspectRatio="xMidYMid meet"></lottie-player>
         </div>
 
         <div class="intro">
@@ -31,42 +35,62 @@
 
             <div id="intro-text">
                 <h1>DID YOU KNOW...</h1>
-                <h2>that a weasel can catch prey 10X bigger than itself? <span>How does it do it?</span>Let's find out!</h2>
+                <h2>that a weasel can catch prey <strong>10X</strong> bigger than itself? <span>Want to see how?</span></h2>
             </div>
             
             <button id="click-to-play">Click To Play!</button>
         
             <div id="youtube-video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/uZOjwzInj2g?controls=0&amp;start=56" title="Weasel War Dance" frameborder="0px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/uZOjwzInj2g?controls=0&start=53&autoplay=1" title="Weasel War Dance" frameborder="0"></iframe>
             </div>
-
-        </div>
-        
+        </div>       
     </div>  
-    
-    <div class="container" id="game-page">
-        <div>           
-            <button id="return-to-intro">Back</button>
-            <div class="speech-bubble">
-                <div class="speech-bubble-text">Hi, I'm Mos the Weasel, and I've got my eyes on a huuuge, furry rabbit</div>
-                <!-- <div class="speech-bubble-text">Can you help me catch it?!</div>
-                <div class="speech-bubble-text">Can you? Can you?</div>
-                <div class="speech-bubble-text">Then let's dance!</div> -->
-              </div> 
 
-            <button id="start-button">Start</button>               
+    <div class="weasel-container" id="instructions-page">
+        <div class="speech-container">
+            <div class="speech-bubble" class="speech-bubble-text" id="hello"></div>
+            <lottie-player id="lottie-speech-bubble" src="https://lottie.host/c4909fc3-5657-4437-a0d0-fcfdc97dc87d/W7jG9sH4Pd.json" background="transparent" speed="1" style="width: 300px; height: 300px;" autoplay></lottie-player>
         </div>
-        <div class="color-button-container">
-            <div id="top">1</div>
-            <div id="side-buttons">
-                <div id="right">2</div>
-                <div id="bottom">3</div>
-            </div>
-            <div id="left">4</div>
-        </div>
-        <div></div>
-        
+
+        <img class="weasel-fixed" id="weasel-hello" src="https://images2.imgbox.com/d4/3e/JvVMfreE_o.jpeg" alt="image host"/>
+
     </div>
+
+    <div class="container" id="game-page">
+        <button id="return-to-intro">BACK</button>
+            
+        <button id="start-button">START</button>  
+
+        <div id="ready-set-go"></div>
+
+        <div class="flex">
+            <div id="player-score"></div>
+        </div>
+
+        <div class="color-button-container">
+            <button class="color-buttons" id="top-color"></button>
+            <div id="side-buttons">
+                <button class="color-buttons" id="right-color"></button>
+                <button class="color-buttons" id="bottom-color"></button>
+            </div>
+            <button class="color-buttons" id="left-color"></button>
+        </div>
+        
+        <div class="images">
+            <img class="weasel-fixed" id="weasel-standing" src="https://images2.imgbox.com/44/89/YM7limz6_o.jpeg" alt="image host"/>
+
+            <img class="weasel-images" id="weasel-jump-1" src="https://images2.imgbox.com/0b/90/PzYajgt6_o.jpeg" alt="image host"/>
+
+            <img class="weasel-images" id="weasel-jump-2" src="https://images2.imgbox.com/86/0f/pkFlTNoE_o.jpeg" alt="image host"/>
+
+            <img class="weasel-images" id="weasel-jump-3" src="https://images2.imgbox.com/5a/a5/pzKjFJdd_o.jpeg" alt="image host"/>
+
+            <img class="weasel-images" id="weasel-jump-4" src="https://images2.imgbox.com/f4/2f/dGKKlxZ7_o.jpeg" alt="image host"/>
+
+            <img class="rabbit-images" id="rabbit-pop-1" src="https://images2.imgbox.com/55/6b/gpPyVPPQ_o.jpeg" alt="image host"/>
+        </div>        
+    </div>
+
 
 
 
