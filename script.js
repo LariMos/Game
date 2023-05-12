@@ -1,21 +1,27 @@
 
-//defining the board
 
-//Define main players - weasel and rabbit
-
-// Define dance combos - 3 dance combos generated automatically with timer set to each color that light up
-//In the future option to connect a song chosen from a playlist  
-// Set start location for players 
-
-//Button to toggle between intro page and game page
+//Button to toggle between intro page and instruction page
 const clickToPlay = document.getElementById("click-to-play");
-const backButton = document.getElementById("return-to-intro");
-
 const introPage = document.getElementById("intro-page");
 const instructionsPage = document.getElementById("instructions-page")
+
+//Introducing the game page and creating a back button to return to intro page 
 const gamePage = document.getElementById("game-page");
+const backButton = document.getElementById("return-to-intro");
+//On introduction page speech bubble is animated through a lottie file 
 const speechAnimationBubble = document.getElementById("lottie-speech-bubble");
 
+//on the game page define variables using the document object to select elements from the HTML page through ID
+const playerScore = document.getElementById("player-score");
+//on the game page before the game launches set a ready-set-go warm-up
+const readySetGoText = document.getElementById("ready-set-go");
+// define variables to keep track of the number of correct clicks, total flashes, and a countdown timer.
+let correctClicks = 0;
+let totalFlashes = 0;
+let count = 0;
+let interval;
+
+//Change display style between intro page and instruction page 
 clickToPlay.addEventListener("click", function () {
     if (introPage.style.display === "none") {
         introPage.style.display = "block";
@@ -28,6 +34,7 @@ clickToPlay.addEventListener("click", function () {
     }
 });
 
+//Back button to flip display style of game page to none and bring back the intro page
 backButton.addEventListener("click", function () {
     if (gamePage.style.display === "block") {
         gamePage.style.display = "none";
@@ -36,7 +43,7 @@ backButton.addEventListener("click", function () {
     }
 });
 
-
+//On the instruction page the speech bubble appears with a timeout function that flips the display style between the instruction page and the game page
 class SpeechBubble {
     constructor(bubbleId, message) {
         this.bubbleId = document.getElementById(bubbleId);
@@ -63,20 +70,13 @@ class SpeechBubble {
     }
 }
 
+//speech bubble with ID hello is created and message introduced back into HTML
 let helloWeasel = new SpeechBubble("hello", "Hi, I'm mOs the weasel! Help me catch the fluffy tailed bunny! Just wack the colors when they pop up!");
 helloWeasel.addMessage();
 helloWeasel.disappear(8000);
 
-const colorButtons = document.getElementsByClassName("color-buttons");
-const weaselImages = document.getElementsByClassName("weasel-images");
-const playerScore = document.getElementById("player-score");
-let correctClicks = 0;
-let totalFlashes = 0;
-let count = 0;
-let interval;
-
-const readySetGoText = document.getElementById("ready-set-go");
-
+// Create a countdown effect before the game starts
+// a series of setTimeout() functions to change the text, and then blank after a certain amount of time has passed. 
 function countdown() {
     if (gamePage.style.display === "block") {
         setTimeout(function () {
@@ -98,15 +98,24 @@ function countdown() {
     }
 }
 
+// Defines an array of color buttons selected from the HTML page through class name
+const colorButtons = document.getElementsByClassName("color-buttons");
+
+// Creates a flashing effect on the button.
+
 function flashButton(colorButton) {
-    colorButton.classList.add("flashing");
-    colorButton.style.opacity = "1";
+    colorButton.classList.add("flashing");//adds the "flashing" class to a given color button element
+    colorButton.style.opacity = "1"; //sets its opacity to 1
     setTimeout(function () {
-        colorButton.classList.remove("flashing");
-        colorButton.style.opacity = "0.1";
-    }, 1000);
+        colorButton.classList.remove("flashing"); //removes the "flashing" class
+        colorButton.style.opacity = "0.1"; //then sets the opacity to 0.1
+    }, 1000); //waits 1 second
 }
 
+// Defines an array of weasel images selected from the HTML page through class name
+const weaselImages = document.getElementsByClassName("weasel-images");
+
+// shows a given weasel image element, waits 1 second, and then hides it again.
 function flashImage(weaselImage) {
     weaselImage.style.display = "block";
     setTimeout(function () {
@@ -114,6 +123,7 @@ function flashImage(weaselImage) {
     }, 1000);
 }
 
+// sets up a loop that flashes each color button and weasel image in turn using the flashButton() and flashImage() functions
 function flashButtons() {
     let totalFlashes = 0;
     let delayBetweenEachButtonFlash = 800;
@@ -126,36 +136,52 @@ function flashButtons() {
             }, delay);
             delay += delayBetweenEachButtonFlash;
         }
-        totalFlashes++;
-        if (totalFlashes >= 15) {
+        totalFlashes++; //increments a totalFlashes counter each time a button is flashed.
+        if (totalFlashes >= 15) { //When all the buttons have been flashed 15 times, it calculates the percentage of correct clicks
             clearInterval(interval);
             let percentage = (correctClicks / (totalFlashes * colorButtons.length)) * 100;
-            if (percentage >= 50) {
-                alert("Yes!!! I'm close enough to catch the rabbit!");
+            if (percentage >= 50) { //if the percentage is greater than or equal to 50% it triggers a win alert
+                alert("Yes!!! I'm close enough to catch the rabbit!"); //The alert messages will be replaced by a win celebration
                 // triggerWinCelebration();
-            } else if (percentage <= 50 && totalFlashes === 14){
-                alert("Darn it's too far! I won't catch it...Better luck next time!");
+            } else{
+                alert("Darn it's too far! I won't catch it...Better luck next time!"); //The alert messages will be replaced by a lose celebration
                 // triggerLoseCelebration();
             }
         }
     }, colorButtons.length * delayBetweenEachButtonFlash);
 }
 
+//function is called whenever a color button is clicked 
 function handleClick(e) {
     const target = e.target;
-    if (target.classList.contains("color-buttons") && target.classList.contains("flashing")) {
-        correctClicks++;
-        rabbitPop();
-        playerScore.innerText = correctClicks;
+    if (target.classList.contains("color-buttons") && target.classList.contains("flashing")) { 
+        correctClicks++; //If the button has the "flashing" class, it increments the correctClicks counter
+        rabbitPop(); //calls a function rabbitPop()that brings the rabbit images up 
+        playerScore.innerText = correctClicks; //updates the score displayed on the page
     }
 }
 
+const rabbitPop2 = document.getElementById("rabbit-pop-2");
+const rabbitHole = document.getElementById("rabbit-hole");
+//brings up the rabbit image after 3 correct clicks
 const rabbitPop1 = document.getElementById("rabbit-pop-1");
 function rabbitPop() {
-    if (correctClicks >= 3) {
+    if (correctClicks === 3) {
         rabbitPop1.style.display = "block";
+    }else if(correctClicks === 5){
+        rabbitPop2.style.display = "block";
+    }else if(correctClicks === 7){
+        rabbitHole.style.display = "none";
+        rabbitPop1.style.display = "none";
+        rabbitPop2.style.top = "100px";
+    }else if(correctClicks === 9){
+        rabbitPop2.style.top = "200px";
+    }
+    else if(correctClicks === 12){
+        rabbitPop2.style.top = "400px";
     }
 }
+
 
 const startButton = document.getElementById("start-button");
 startButton.addEventListener("click", () => {
@@ -174,17 +200,17 @@ function triggerWinCelebration() {
     const winCelebration = document.getElementById("win-celebration");
     winCelebration.style.display = "block";
     setTimeout(() => {
-      winCelebration.style.display = "none";
+        winCelebration.style.display = "none";
     }, 500);
-  }
+}
 
-  function triggerLoseCelebration() {
+function triggerLoseCelebration() {
     const loseCelebration = document.getElementById("lose-celebration");
     loseCelebration.style.display = "block";
     setTimeout(() => {
-      loseCelebration.style.display = "none";
+        loseCelebration.style.display = "none";
     }, 500);
-  }
+}
 
 
 

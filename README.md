@@ -15,12 +15,11 @@ It is based on the nickname I received in highschool - "Weasel Mos", that repres
 
 ## Screenshots
 Screenshots of the game:
-[Imgur](https://i.imgur.com/rn0PE1n.png)
-[Imgur](https://i.imgur.com/kzEwIOx.png)
-[Imgur](https://i.imgur.com/LW87x2q.png)
-[Imgur](https://i.imgur.com/sdRDZ1D.png)
-[Imgur](https://i.imgur.com/7wiUcP9.png)
-[Imgur](https://i.imgur.com/93zkhDt.png)
+<a href="https://imgur.com/rn0PE1n"><img src="https://i.imgur.com/rn0PE1n.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/kzEwIOx"><img src="https://i.imgur.com/kzEwIOx.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/sdRDZ1D"><img src="https://i.imgur.com/sdRDZ1D.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/93zkhDt"><img src="https://i.imgur.com/93zkhDt.png" title="source: imgur.com" /></a>
+
 
 
 ## Technologies Used
